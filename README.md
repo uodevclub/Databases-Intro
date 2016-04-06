@@ -20,3 +20,14 @@ where "venv name" is whatever you want to name your container (typically "venv")
 source <venv name>/bin/activate
 ```
 Now you're ready to start coding!
+
+###Writing the Flask App
+
+###Running the Flask App
+Execute your app.py by running `./app.py' and you should see something like:
+```
+* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+```
+Your server is up and running! To execute the API calls you wrote...
