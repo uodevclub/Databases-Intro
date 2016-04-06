@@ -15,7 +15,7 @@ After you have installed virtualenv you can create a "container" for your flask 
 virtualenv <venv name>
 <venv name>/bin/pip install flask
 ```
-where "<venv name>" is whatever you want to name your container (typically "venv"). Next, you want to start your virtual environment with the command:
+where <venv name> is whatever you want to name your container (typically "venv"). Next, you want to start your virtual environment with the command:
 ```
 source <venv name>/bin/activate
 ```
