@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from TwitterAPI import TwitterAPI
 
 app = Flask(__name__)
-twitter_api = TwitterAPI('TvgYpf2f9KDReUxp8MrjWQ5QZ', 'NbfflAQu3N1S7S7VGqXhonVjGM0qbiMcaJtqpoJEno6eb3hHko', '364104026-GxEOLphvkmGrOhQuuWnudDdVydmCkcgQwy2zpkfQ', '0bBBcrmO7IuyKa4q83UtodNn8xWUyGT3WCJ9zIyOM4wIW')
+twitter_api = TwitterAPI(consumer_key, consumer_secret, access_token_key, access_token_secret)
 
 @app.route('/person', methods=['GET'])
 def get_person():
