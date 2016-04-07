@@ -1,4 +1,4 @@
-# Server-Side
+# Spring 2016 Week 2 - Server-Side
 Learning how to make a server-side application with Flask
 
 ### Introduction
