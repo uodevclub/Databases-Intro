@@ -31,3 +31,5 @@ Execute your app.py by running `python app.py` and you should see something like
 * Debugger is active!
 ```
 Your server is up and running! To execute the API calls you wrote...
+
+To make calls using the API functions you wrote, start the flask server and run ```curl <url of localhost>/person?q=<handle of user you want to search>```
