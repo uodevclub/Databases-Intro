@@ -5,6 +5,7 @@ Learning how to make a server-side application with Flask
 Today we will be making a server-side program using [Flask](http://flask.pocoo.org/ "Flask Site"), which is a Python microweb framework that makes it easy to get a server up and running.
 
 ### Setting Up
+
 First, you want to create a folder on your local computer where your project will "live". Navigate to this directory and create a python file, app.py, that will be the foundation of your Flask app.
 Python has a great tool called [Virtualenv](https://virtualenv.pypa.io/en/latest/ "Virtual Env for Python") that helps you create isolated environments for your Python projects. Go ahead and install virtualenv using Python's package manager, pip.
 ```
@@ -21,8 +22,6 @@ source <venv name>/bin/activate
 ```
 Now you're ready to start coding!  
 
-### Writing the Flask App
-
 ### Running the Flask App
 Execute your app.py by running `python app.py` and you should see something like:
 ```
@@ -30,4 +29,4 @@ Execute your app.py by running `python app.py` and you should see something like
 * Restarting with stat
 * Debugger is active!
 ```
-Your server is up and running! To execute the API calls you wrote...
+Your server is up and running!
