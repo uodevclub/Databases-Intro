@@ -1,8 +1,39 @@
 from flask import Flask, jsonify, request
 from TwitterAPI import TwitterAPI
-
+import psycopg2
+import sys
+from CONFIG import *
 app = Flask(__name__)
+
 twitter_api = TwitterAPI(consumer_key, consumer_secret, access_token_key, access_token_secret)
+
+db_connect = None
+try:
+	#Create your database
+	db_connect = psycopg2.connect(database=database_name,user=database_user,password=database_password)
+
+	# Create client cursor to execute commands
+	cursor = db_connect.cursor()
+	cursor.execute("CREATE TABLE Users (id SERIAL PRIMARY KEY, name VARCHAR, username VARCHAR,followers_count INTEGER);")
+	#The variables placeholder must always be a %s, psycop2 will automatically convert the values to SQL literal
+
+	###EXECUTE TEST COMMAND HERE###
+	db_connect.commit()
+
+	cursor.execute("SELECT * FROM Users")
+
+	print(cursor.fetchone())
+
+except psycopg2.DatabaseError as e:
+
+	print ('Error %s' % e)
+
+	sys.exit(1)
+
+finally:
+	if db_connect:
+		db_connect.close()
+
 
 @app.route('/person', methods=['GET'])
 def get_person():
