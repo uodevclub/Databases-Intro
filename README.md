@@ -1,35 +1,26 @@
-# Spring 2016 Week 2 - Server-Side
-Learning how to make a server-side application with Flask
+# Spring 2016 Week 3 - How to Set Up a Database
+That server-side Flask application from Week 2? We are adding a database to that to hold the data retrieved from calls to Twitter!
 
 ### Introduction
 Today we will be making a server-side program using [Flask](http://flask.pocoo.org/ "Flask Site"), which is a Python microweb framework that makes it easy to get a server up and running.
 
 ### Setting Up
 
-First, you want to create a folder on your local computer where your project will "live". Navigate to this directory and create a python file, app.py, that will be the foundation of your Flask app.
-Python has a great tool called [Virtualenv](https://virtualenv.pypa.io/en/latest/ "Virtual Env for Python") that helps you create isolated environments for your Python projects. Go ahead and install virtualenv using Python's package manager, pip.
-```
-pip install virtualenv
-```
-After you have installed virtualenv you can create a "container" for your flask project and install flask by running the commands:
-```
-virtualenv <venv name>
-<venv name>/bin/pip install flask
-```
-where `<venv name>` is whatever you want to name your container (typically "venv"). Next, you want to start your virtual environment with the command:
-```
-source <venv name>/bin/activate
-```
-Now you're ready to start coding!  
+First, you want to create a folder on your local computer where your project will "live". Go ahead and clone the repository "Server-Side" if you want a good starting point. If you don't have virtual environment for Python and Flask installed already, go ahead and follow the Server-Side tutorial to install them. 
 
-### Running the Flask App
-Execute your app.py by running `python app.py` and you should see something like:
+Fire up your virtual environment using the command `source <venv name>\bin\activate`. Once in your virtual environment, install psycopg2, Python tool for PostgreSQL, and Flask-SQLAlchemy which allows you to easily use the database with Flask. 
 ```
-* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-* Restarting with stat
-* Debugger is active!
+pip install psycopg2 SQL-Alchemy
 ```
+You will need to have PostgreSQL installed on your machine if you don't already. Go to http://www.postgresql.org/download/ and download the right version.
+For macs, you should export Postgresql to your path by running `export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin` from your terminal.
+
+Once you have Postgres installed, go ahead start it up. Run `psql` to enter into the command line tool so that we can make a user and database. 
+```
+create user <username> with password '<password>';
+create database <db name> owner <username> encoding 'utf-8';
+```
+Keep in mind that in the psql shell you have to end commands with a semi-colon!
 
 Your server is up and running!
 
-To make calls using the API functions you wrote, start the flask server and run ```curl <url of localhost>/person?q=<handle of user you want to search>```
